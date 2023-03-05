@@ -1,0 +1,54 @@
+.toggle input[type='checkbox'] {
+    display: none;
+}
+
+.toggle {
+    display: flex;
+    justify-content: center;
+    margin: 300px;
+}
+
+.toggle label {
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    width: 100px;
+    height: 50px;
+    content: attr(data-off);
+}
+
+.toggle label::after {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    transition: all 0.4s ease-in-out;
+    width: 42px;
+    height: 42px;
+    content: attr(data-on);
+}
+
+.toggle input[type='checkbox']:checked ~ label {
+    background-color: white;
+    border-color: white;
+}
+
+.toggle input[type='checkbox']:checked ~ label::after {
+    background-color: black;
+    transform: translateX(50px);
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+body.dark-theme {
+    background-color: #333;
+}
